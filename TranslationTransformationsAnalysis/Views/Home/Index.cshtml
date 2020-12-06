@@ -1,0 +1,175 @@
+﻿@model IEnumerable<TranslationTransformationsAnalysis.Models.TransformationUnit>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<a asp-action="Index"><h1 class="text-center h3">Translation Transformation</h1></a>
+
+<div class="align-content-center">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a asp-action="Create">
+                <span style="color:green;">
+                    <i class="fas fa-plus-circle m-2"> Create New</i>
+                </span>
+
+            </a>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            </ul>
+            <form asp-action="Index" class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Original or translation" aria-label="Search" name="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+
+<form asp-action="Index">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Avalible filters
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div>
+                <div class="ml-1 mt-0 mr-1">
+
+                    <div class="form-check select-all">
+                        <input class="form-check-input" id="all" name="values" type="checkbox" value="option1">
+                        <label class="form-check-label" for="all">Формальні трансформації</label>
+                    </div>
+                    <div class="ml-5">
+                        <input class="form-check-input" name="values" type="checkbox" value="option11">
+                        <label class="form-check-label" for="inlineCheckbox1">Лексичний рівень</label>
+                    </div>
+                    <div class="ml-5">
+                        <input class="form-check-input" name="values" type="checkbox" value="option12">
+                        <label class="form-check-label" for="inlineCheckbox1">Морфологічний рівень</label>
+                    </div>
+                    <div class="ml-5">
+                        <input class="form-check-input" name="values" type="checkbox" value="option12">
+                        <label class="form-check-label" for="inlineCheckbox1">Синтаксичний рівень</label>
+                    </div>
+                    <div class="ml-5">
+                        <input class="form-check-input" name="values" type="checkbox" value="option12">
+                        <label class="form-check-label" for="inlineCheckbox1">Фонетичний рівень</label>
+                    </div>
+                    <div class="ml-5">
+                        <input class="form-check-input" name="values" type="checkbox" value="option12">
+                        <label class="form-check-label" for="inlineCheckbox1">Словотвірний рівень</label>
+                    </div>
+                </div>
+            </div>
+            <div class="border">
+                <div class="ml-1 mr-1">
+                    <div class="form-check ">
+                        <input class="form-check-input" name="values" type="checkbox" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox1">Формально-змістові трансформації</label>
+                    </div>
+                    <div class="ml-5">
+                        <input class="form-check-input" name="values" type="checkbox" value="option11">
+                        <label class="form-check-label" for="inlineCheckbox1">Лексичний рівень</label>
+                    </div>
+                    <div class="ml-5">
+                        <input class="form-check-input" name="values" type="checkbox" value="option12">
+                        <label class="form-check-label" for="inlineCheckbox1">Морфологічний рівень</label>
+                    </div>
+                    <div class="ml-5">
+                        <input class="form-check-input" name="values" type="checkbox" value="option12">
+                        <label class="form-check-label" for="inlineCheckbox1">Синтаксичний рівень</label>
+                    </div>
+                    <div class="ml-5">
+                        <input class="form-check-input" name="values" type="checkbox" value="option12">
+                        <label class="form-check-label" for="inlineCheckbox1">Фонетичний рівень</label>
+                    </div>
+                    <div class="ml-5">
+                        <input class="form-check-input" name="values" type="checkbox" value="option12">
+                        <label class="form-check-label" for="inlineCheckbox1">Словотвірний рівень</label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="ml-1 mr-1">
+                    <div class="form-check">
+                        <input class="form-check-input" name="values" type="checkbox" value="option3">
+                        <label class="form-check-label" for="inlineCheckbox1">Прагматичні трансформації</label>
+                    </div>
+                    <div class="ml-5">
+                        <input class="form-check-input" name="values" type="checkbox" value="option12">
+                        <label class="form-check-label" for="inlineCheckbox1">Фразеологічні трансформації</label>
+                    </div>
+                    <div class="ml-5">
+                        <input class="form-check-input" name="values" type="checkbox" value="option12">
+                        <label class="form-check-label" for="inlineCheckbox1">Концептуальні перетворення</label>
+                    </div>
+                    <div class="ml-5">
+                        <input class="form-check-input" name="values" type="checkbox" value="option12">
+                        <label class="form-check-label" for="inlineCheckbox1">Аксіологічні трансформації</label>
+                    </div>
+                    <div class="ml-5">
+                        <input class="form-check-input" name="values" type="checkbox" value="option12">
+                        <label class="form-check-label" for="inlineCheckbox1">Мегатекстові трансформації</label>
+                    </div>
+                </div>
+            </div>
+            <div class="float-right mt-1">
+                <button class="btn btn-outline-secondary my-2 my-sm-0 m-1" type="submit">Filter</button>
+            </div>
+        </div>
+    </div>
+
+
+</form>
+<table class="table">
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <h5>
+                        <em>
+                            <a asp-action="Details" asp-route-id="@item.Id">
+                                @Html.DisplayFor(modelItem => item.Original)
+                            </a>
+                        </em>
+                    </h5>
+                    <p>
+                        <em>
+                            @Html.DisplayFor(modelItem => item.Translation)
+                        </em>
+                    </p>
+                    <div class="float-right">
+                        <a asp-action="Create" asp-route-id="@item.Id">
+                            <span style="color:green;">
+                                <i class="fas fa-pencil-alt"></i>
+                            </span>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">
+                            <span style="color:red">
+                                <i class="fas fa-backspace"></i>
+                            </span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $('#all').change(function (e) {
+            if (e.currentTarget.checked) {
+                $('.rows').find('input[type="checkbox"]').prop('checked', true);
+            } else {
+                $('.rows').find('input[type="checkbox"]').prop('checked', false);
+            }
+        });
+
+    </script>
+}

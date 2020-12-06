@@ -1,0 +1,241 @@
+﻿@model TranslationTransformationsAnalysis.Models.TransformationUnit
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <hr />
+    <dl class="row text-left mb-5">
+        <dt class="col-md-2">
+          Оригінал
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Original)
+        </dd>
+        <dt class="col-md-2">
+           Переклад
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Translation)
+        </dd>
+    </dl>
+    <div class="ml-1">
+
+                <div class="ml-1 mb-3">
+
+                    @{if (Model.FormalFonLevel != null | Model.FormalLekLevel != null | Model.FormalMorfLevel != null | Model.FormalSlovLevel != null | Model.FormalSyntLevel != null)
+                        {
+
+                            <h5> Формальні трансформації </h5>
+
+
+                        }
+
+                    }
+                </div>
+                <dl class="row ml-4">
+
+                    @{
+                        if (Model.FormalFonLevel != null)
+                        {
+                            <dt class="col-md-2">
+                                Фонетичний рівень
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.FormalFonLevel)
+                            </dd>
+                        }
+                    }
+
+                    @{
+                        if (Model.FormalLekLevel != null)
+                        {
+                            <dt class="col-md-2">
+                                Лексичний рівень
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.FormalLekLevel)
+                            </dd>
+                        }
+                    }
+                    @{
+                        if (Model.FormalMorfLevel != null)
+                        {
+                            <dt class="col-md-2">
+                                Морфологічний рівень
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.FormalMorfLevel)
+                            </dd>
+                        }
+                    }
+                    @{
+                        if (Model.FormalSlovLevel != null)
+                        {
+                            <dt class="col-md-2">
+                                Словниковий рівень
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.FormalSlovLevel)
+                            </dd>
+                        }
+                    }
+                    @{
+                        if (Model.FormalSyntLevel != null)
+                        {
+                            <dt class="col-md-2">
+                                Синтаксичний рівень
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.FormalSyntLevel)
+                            </dd>
+                        }
+                    }
+                </dl>
+
+                <div class="border-bottom border-top mt-5">
+
+
+                    <div class="ml-1 mb-3">
+
+                        @{if (Model.ContextFonLevel != null | Model.ContextLekLevel != null | Model.ContextMorfLevel != null | Model.ContextSyntLevel != null)
+                            {
+
+                                <h5> Формально-змістові трансформації </h5>
+
+
+                            }
+
+                        }
+                    </div>
+
+                    <dl class="row ml-4">
+
+                        @{
+                            if (Model.ContextFonLevel != null)
+                            {
+                                <dt class="col-md-2">
+                                    Фонетичний рівень
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @Html.DisplayFor(model => model.ContextFonLevel)
+                                </dd>
+                            }
+                        }
+
+                        @{
+                            if (Model.ContextLekLevel != null)
+                            {
+                                <dt class="col-md-2">
+                                    Лексичний рівень
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @Html.DisplayFor(model => model.ContextLekLevel)
+                                </dd>
+                            }
+                        }
+                        @{
+                            if (Model.ContextMorfLevel != null)
+                            {
+                                <dt class="col-md-2">
+                                    Морфологічний рівень
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @Html.DisplayFor(model => model.ContextMorfLevel)
+                                </dd>
+                            }
+                        }
+                        @{
+                            if (Model.ContextSyntLevel != null)
+                            {
+                                <dt class="col-md-2">
+                                    Синтаксичний рівень
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @Html.DisplayFor(model => model.ContextSyntLevel)
+                                </dd>
+                            }
+                        }
+                    </dl>
+                </div>
+                <div class="ml-1">
+
+                    @{if (Model.PragmalPragmalFraTtransformation != null | Model.PragmalMegTransformation != null | Model.PragmalKoncTransformation != null | Model.PragmalAxTransformation != null)
+                        {
+
+                            <h5> Прагматичні трансформації </h5>
+
+
+                        }
+
+                    }
+                </div>
+                <dl class="row ml-4">
+
+                    @{
+                        if (Model.PragmalPragmalFraTtransformation != null)
+                        {
+                            <dt class="col-md-2">
+                                Фразеологічні трансформації
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.PragmalPragmalFraTtransformation)
+                            </dd>
+                        }
+                    }
+
+                    @{
+                        if (Model.PragmalMegTransformation != null)
+                        {
+                            <dt class="col-md-2">
+                                Мегатекстові трансформації
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.PragmalMegTransformation)
+                            </dd>
+                        }
+                    }
+                    @{
+                        if (Model.PragmalKoncTransformation != null)
+                        {
+                            <dt class="col-md-2">
+                                Концептуальні перетворення
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.PragmalKoncTransformation)
+                            </dd>
+                        }
+                    }
+                    @{
+                        if (Model.PragmalAxTransformation != null)
+                        {
+                            <dt class="col-md-2">
+                                Аксіологічні трансофрмації
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.PragmalAxTransformation)
+                            </dd>
+                        }
+                    }
+                </dl>
+    </div>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">
+        <span style="color:green;">
+            <i class="fas fa-pencil-alt"> Edit</i>
+        </span>
+    </a>
+    <div class="float-right">
+        <a asp-action="Index">
+            <span style="color:gray;">
+                <i class="fas fa-arrow-left">
+                    Back to List
+                </i>
+            </span>
+        </a>
+    </div>
+</div>
