@@ -1,0 +1,139 @@
+﻿@model TranslationTransformationsAnalysis.Models.TransformationUnit
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TransformationUnit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Original" class="control-label"></label>
+                <input asp-for="Original" class="form-control" />
+                <span asp-validation-for="Original" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Translation" class="control-label"></label>
+                <input asp-for="Translation" class="form-control" />
+                <span asp-validation-for="Translation" class="text-danger"></span>
+            </div>
+
+            <div>
+                <h4>Формальні трансформації</h4>
+                <div class="form-group">
+                    <label class="control-label">Фонетичний рівень</label>
+                    <input asp-for="FormalFonLevel" class="form-control" />
+                    <span asp-validation-for="FormalFonLevel" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Словниковий рівень</label>
+                    <input asp-for="FormalSlovLevel" class="form-control" />
+                    <span asp-validation-for="FormalSlovLevel" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Лексичний рівень</label>
+                    <input asp-for="FormalLekLevel" class="form-control" />
+                    <span asp-validation-for="FormalLekLevel" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Морфологічний рівень</label>
+                    <input asp-for="FormalMorfLevel" class="form-control" />
+                    <span asp-validation-for="FormalMorfLevel" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Синтаксичний рівень</label>
+                    <input asp-for="FormalSyntLevel" class="form-control" />
+                    <span asp-validation-for="FormalSyntLevel" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div>
+                <h4>Формально-змістові трансформації</h4>
+                <div class="form-group">
+                    <label class="control-label"> Фонетичний рівень</label>
+                    <input asp-for="ContextFonLevel" class="form-control" />
+                    <span asp-validation-for="ContextFonLevel" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Лексичний рівень</label>
+                    <input asp-for="ContextLekLevel" class="form-control" />
+                    <span asp-validation-for="ContextLekLevel" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Морфологічний рівень</label>
+                    <input asp-for="ContextMorfLevel" class="form-control" />
+                    <span asp-validation-for="ContextMorfLevel" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Синтаксичний рівень</label>
+                    <input asp-for="ContextSyntLevel" class="form-control" />
+                    <span asp-validation-for="ContextSyntLevel" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div>
+                <h4>Прагматичні трансформації</h4>
+                <div class="form-group">
+                    <label class="control-label">Фразеологічний рівень</label>
+                    <input asp-for="PragmalPragmalFraTtransformation" class="form-control" />
+                    <span asp-validation-for="PragmalPragmalFraTtransformation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Концептуальний рівень</label>
+                    <input asp-for="PragmalKoncTransformation" class="form-control" />
+                    <span asp-validation-for="PragmalKoncTransformation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Аксіологічний рівень</label>
+                    <input asp-for="PragmalAxTransformation" class="form-control" />
+                    <span asp-validation-for="PragmalAxTransformation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Мегатекстовий рівень</label>
+                    <input asp-for="PragmalMegTransformation" class="form-control" />
+                    <span asp-validation-for="PragmalMegTransformation" class="text-danger"></span>
+                </div>
+
+            </div>
+            <div class="form-group">
+                @{
+                    if (Model.Id > 0)
+                    {
+                        <input type="submit" value="Update" class="btn btn-primary" />
+
+                    }
+                    else
+                    {
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    }
+                }
+                <div class="float-right">
+                    <a asp-action="Index">
+                        <span style="color:gray;">
+                            <i class="fas fa-arrow-left">
+                                Back to List
+                            </i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
